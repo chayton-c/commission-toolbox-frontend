@@ -48,12 +48,16 @@ export class MessageComponent implements OnInit {
       this.wechatMessages = res.wechatMessages;
       this.wechatGroupName = res.wechatGroupName;
       for (let i = 0; i < this.wechatMessages.length; i++) {
+        this.wechatMessages[i].createdAt = new Date(this.wechatMessages[i].createdAt);
+        this.wechatMessages[i].showDate = true;
         if (i == 0) continue;
         let wechatMessage = this.wechatMessages[i];
         let previousWechatMessage = this.wechatMessages[i - 1];
-        if (wechatMessage.createdAt.getTime() - previousWechatMessage.createdAt.getTime() > 60 * 5)
-          wechatMessage.showDate = false;
+        // wechatMessage.showDate = new Date(wechatMessage.createdAt).getTime() - new Date(previousWechatMessage.createdAt).getTime() > 60000 * 5;
+        wechatMessage.showDate = wechatMessage.createdAt.getTime() - previousWechatMessage.createdAt.getTime() > 60000 * 5;
+        console.log(wechatMessage.showDate)
       }
+      this.cdr.detectChanges();
     });
   }
 

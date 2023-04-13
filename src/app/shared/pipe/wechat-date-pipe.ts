@@ -5,6 +5,8 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class WechatDatePipe implements PipeTransform {
   transform(value: Date): string {
+    if (!value) return '';
+
     const now = new Date();
     const dayOfWeek = ['周日', '周一', '周二', '周三', '周四', '周五', '周六'];
     const hour = value.getHours();
