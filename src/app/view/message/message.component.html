@@ -4,23 +4,21 @@
     <img (click)="jump2ContactList()"
          src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/content/back-logo.png" alt=""
          class="gather_title_icon1">
-    <span>东东采集群</span>
+    <span>{{wechatGroupName}}</span>
     <img (click)="jump2Search()"
          src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/content/query-logo.png" alt="" class="gather_title_icon2">
   </div>
 </div>
 
 <div *ngFor="let wechatMessage of wechatMessages">
-  <div class="time">
-  <span>今天 </span>
-  <span>09:54</span>
+  <div class="time" *ngIf="wechatMessage.showDate">
+    <span>{{wechatMessage.createdAt | wechatDatePipe }}</span>
   </div>
   <div class="active w" *ngIf="wechatMessage.messageType == WechatMessage.TYPE_IMAGE">
     <div class="active_icon">
       <img src="./img/touxiang.png" alt="">
     </div>
     <div class="active_content">
-      <p class="active_content_name">芸芸</p>
       <div class="active2_content_text">
         <img [src]="wechatMessage.imgUrl" alt="" style="width: 80px;height: 80px">
       </div>
@@ -31,7 +29,6 @@
       <img src="./img/touxiang.png" alt="">
     </div>
     <div class="active_content" *ngIf="wechatMessage.messageType == WechatMessage.TYPE_TEXT">
-      <p class="active_content_name">芸芸</p>
       <div class="active_content_text active3_content_text ">
         <p class="active_content_sj"></p>
         {{wechatMessage.content}}

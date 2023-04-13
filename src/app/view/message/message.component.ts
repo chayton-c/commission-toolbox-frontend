@@ -17,6 +17,7 @@ export class MessageComponent implements OnInit {
   wechatGroupId?: string;
   wechatMessages: WechatMessage[] = [];
   WechatMessage = WechatMessage;
+  wechatGroupName?: string;
 
   constructor(
     private http: HttpClient,
@@ -45,6 +46,14 @@ export class MessageComponent implements OnInit {
     this.http.post('api/external/wechatMessage/list', HttpUtils.createBody(params), HttpUtils.createHttpOptions()).subscribe((res: any) => {
       if (!res.success) return;
       this.wechatMessages = res.wechatMessages;
+      this.wechatGroupName = res.wechatGroupName;
+      for (let i = 0; i < this.wechatMessages.length; i++) {
+        if (i == 0) continue;
+        let wechatMessage = this.wechatMessages[i];
+        let previousWechatMessage = this.wechatMessages[i - 1];
+        if (wechatMessage.createdAt.getTime() - previousWechatMessage.createdAt.getTime() > 60 * 5)
+          wechatMessage.showDate = false;
+      }
     });
   }
 

@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import {HttpClientModule} from "@angular/common/http";
+import {WechatDatePipe} from "./pipe/wechat-date-pipe";
 
 // #region third libs
 
@@ -27,21 +28,23 @@ const DIRECTIVES: Array<Type<void>> = [];
         // third libs
         ...THIRDMODULES,
     ],
-  declarations: [
-    // your components
-    ...COMPONENTS,
-    ...DIRECTIVES
-  ],
-  exports: [
-    CommonModule,
-    FormsModule,
-    ReactiveFormsModule,
-    RouterModule,
-    // third libs
-    ...THIRDMODULES,
-    // your components
-    ...COMPONENTS,
-    ...DIRECTIVES
-  ]
+    declarations: [
+        // your components
+        ...COMPONENTS,
+        ...DIRECTIVES,
+        WechatDatePipe
+    ],
+    exports: [
+        CommonModule,
+        FormsModule,
+        ReactiveFormsModule,
+        RouterModule,
+        // third libs
+        ...THIRDMODULES,
+        // your components
+        ...COMPONENTS,
+        ...DIRECTIVES,
+        WechatDatePipe
+    ]
 })
 export class SharedModule { }

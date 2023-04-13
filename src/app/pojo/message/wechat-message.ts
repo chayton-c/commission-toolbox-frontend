@@ -11,6 +11,7 @@ export class WechatMessage {
   imgUrl: string;
   createdAt: Date;
   updatedAt: Date;
+  showDate: boolean;
 
   constructor() {
     this.id = "";
@@ -20,5 +21,6 @@ export class WechatMessage {
     this.imgUrl = "";
     this.createdAt = new Date();
     this.updatedAt = new Date();
+    this.showDate = true;
   }
 }
