@@ -1,0 +1,38 @@
+
+<div class="fine_title">
+  <span>微信好物群</span>
+  <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/content/file-logo.png" alt="" class="fine_title_icon">
+</div>
+<div class="search w">
+  <input type="text" placeholder="搜索">
+</div>
+<ul class="active ">
+  <li class="active_style"
+      *ngFor="let wechatGroup of wechatGroups; let i = index;"
+      (click)="jump2Message(wechatGroup)"
+  >
+    <div class="active_l">
+      <span>{{i + 1}}</span>
+    </div>
+    <div class="active_z">
+      <div class="active_z_left"></div>
+      <div class="active_z_right">
+        <div>
+          <div class="active_z_s">{{wechatGroup.name}}</div>
+          <div class="active_z_x">{{wechatGroup.lastMessage}}</div>
+        </div>
+        <div class="active_r_time">{{wechatGroup.createdAt  | date: 'HH:mm'}}</div>
+      </div>
+    </div>
+  </li>
+</ul>
+<div class="fool">
+  <div class="fool_conteny_l">
+    <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/content/home-logo.png" alt="">
+    <span>首页社群</span>
+  </div>
+  <div class="fool_conteny_r">
+    <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/content/share-logo.png" alt="">
+    <span>分享</span>
+  </div>
+</div>

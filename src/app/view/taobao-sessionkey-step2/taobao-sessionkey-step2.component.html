@@ -1,0 +1,37 @@
+<div class="heard">
+  <div class="heard_left">
+    定向库
+  </div>
+  <div class="heard_right">
+    <span class="heard_right_t">退出</span>
+    <span>登入</span>
+  </div>
+</div>
+<div class="title">
+  <div class="title_t">欢迎使用定向库高佣CMS社群导购系统</div>
+  <div class="title_b">三步即可拥有专业的导购商城</div>
+</div>
+<div class="icon">
+  <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/home/step2-navigation.png" alt="">
+</div>
+<div class="icon_d">
+  <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/home/success-large.png" alt="" class="icon_d_icon">
+  <p class="icon_d_t1">淘宝联盟授权成功</p>
+  <p class="icon_d_t2">授权账号：授权到期时间</p>
+</div>
+<div class="content">
+  <p class="content_text1">淘宝联盟PID设置</p>
+  <div class="content_inp">
+    <input placeholder="添加" [(ngModel)]="taobaoPid" name="taobaoPid"/>
+    <button (click)="updateTaobaoPid()">确认</button>
+  </div>
+  <p class="content_text2">之后可以在联盟授权菜单中修改或配置京东，拼多多的介入信息</p>
+</div>
+<button class="sub" (click)="updateTaobaoPid()">
+  提交
+</button>
+<br/>
+<br/>
+<br/>
+<br/>
+

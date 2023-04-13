@@ -1,0 +1,28 @@
+<div class="heard">
+  <div class="heard_left">
+    定向库
+  </div>
+  <div class="heard_right">
+    <span class="heard_right_t">退出</span>
+    <span>登入</span>
+  </div>
+</div>
+<div *ngIf="taobaoSessionKeyAuthUrl" [style]="hideTaobaoSessionKeyAuthIframe ? 'display:none' : ''" style="text-align: center">
+  <iframe #taobaoSessionKeyAuthIframe [src]="taobaoSessionKeyAuthUrl"
+          style="height: 600px;min-width: 800px;margin:30px 0;border: solid 1px #FF5300;border-radius: 12px;"></iframe>
+</div>
+<div class="title">
+  <div class="title_t">欢迎使用定向库高佣CMS社群导购系统</div>
+  <div class="title_b">三步即可拥有专业的导购商城</div>
+</div>
+<div class="icon">
+  <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/home/step1-navigation.png" alt="">
+</div>
+<div class="content">
+  <div>联盟</div>
+  <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/home/right-arrow.png" alt="">
+  <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/home/session-key-logo.png" alt="">
+</div>
+<button type="button" class="sub" (click)="createAuthorization()">
+  开始授权
+</button>

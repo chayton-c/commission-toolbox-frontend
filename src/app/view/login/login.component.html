@@ -1,0 +1,26 @@
+<div class="box">
+  <div class="left">
+    <img src="http://commission-toolbox.oss-cn-hangzhou.aliyuncs.com/front-end/home/icon2.png" alt="">
+  </div>
+  <div class="right">
+    <div class="right_conten ">
+      <div class="w">
+        <p class="right_conten_text1">手机验证码登录</p>
+        <input placeholder="请输入手机号" class="right_conten_hao" id="tel" [(ngModel)]="tel" name="tel">
+        <div class="right_conten_input">
+          <input type="text" placeholder="手机验证码" class="right_conten_sjyzm" [(ngModel)]="verificationCode" name="verificationCode">
+          <button class="right_conten_hqyzm" *ngIf="verificationCodeGetCountDownNumber == 0" (click)="sendVerificationCode()">获取验证码 </button>
+          <button class="right_conten_hqyzm" *ngIf="verificationCodeGetCountDownNumber != 0">{{ verificationCodeGetCountDownNumber }}秒后再获取 </button>
+        </div>
+        <p class="erro" *ngIf="errorMsg">{{errorMsg}}</p>
+        <p class="right_conten_new">新用户将自动注册</p>
+        <button class="right_conten_dnegru" (click)="login()">登入</button>
+        <p class="right_conten_sq">
+          <span class="right_conten_sqs">登录即视为同意</span>
+          <span class="right_conten_sqx">《定向库用户协议》</span>
+        </p>
+      </div>
+
+    </div>
+  </div>
+</div>
