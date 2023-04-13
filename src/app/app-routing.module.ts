@@ -9,7 +9,7 @@ const routes: Routes = [
   { path: 'c/:userId', loadChildren: () => import('./view/contact-list/contact-list.module').then(m => m.ContactListModule) },
   { path: 'search', loadChildren: () => import('./view/search/search.module').then(m => m.SearchModule) },
   { path: 'search-result', loadChildren: () => import('./view/search-result/search-result.module').then(m => m.SearchResultModule) },
-  { path: 'm/:messageGroupId', loadChildren: () => import('./view/message/message.module').then(m => m.MessageModule) }
+  { path: 'm/:wechatGroupId', loadChildren: () => import('./view/message/message.module').then(m => m.MessageModule) }
 ];
 
 @NgModule({
